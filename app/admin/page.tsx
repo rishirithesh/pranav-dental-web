@@ -70,21 +70,23 @@ export default function AdminPage() {
         if (!file) return;
 
         setUploadingImage(true);
-        const formData = new FormData();
-        formData.append('file', file);
 
         try {
-            const res = await fetch('/api/upload-image', {
-                method: 'POST',
-                body: formData,
-            });
-            const data = await res.json();
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+            const filePath = `${fileName}`;
 
-            if (data.url) {
-                await supabase.from('gallery').insert([{ image_url: data.url, category: uploadCategory }]);
+            const { error: uploadError } = await supabase.storage.from('gallery').upload(filePath, file);
+
+            if (uploadError) throw uploadError;
+
+            const { data: { publicUrl } } = supabase.storage.from('gallery').getPublicUrl(filePath);
+
+            if (publicUrl) {
+                await supabase.from('gallery').insert([{ image_url: publicUrl, category: uploadCategory }]);
                 alert('Image uploaded successfully to gallery!');
             } else {
-                alert('Failed to upload image to R2');
+                alert('Failed to get public URL');
             }
         } catch (err) {
             console.error(err);
@@ -258,7 +260,7 @@ export default function AdminPage() {
                                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
                                         />
                                         {uploadingImage ? (
-                                            <div className="flex flex-col items-center"><Loader2 className="w-10 h-10 animate-spin text-primary mb-3" /><p className="font-medium text-gray-600">Uploading to Cloudflare R2...</p></div>
+                                            <div className="flex flex-col items-center"><Loader2 className="w-10 h-10 animate-spin text-primary mb-3" /><p className="font-medium text-gray-600">Uploading to Supabase Storage...</p></div>
                                         ) : (
                                             <div className="flex flex-col items-center"><ImageIcon className="w-10 h-10 text-gray-400 mb-3" /><p className="font-medium text-gray-600">Click or drag image to upload</p><p className="text-xs text-gray-400 mt-1">PNG, JPG up to 5MB</p></div>
                                         )}

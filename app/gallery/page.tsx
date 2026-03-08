@@ -58,7 +58,7 @@ export default async function GalleryPage({ searchParams }: { searchParams: { ca
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {images?.map((img) => (
                         <div key={img.id} className="group relative aspect-[4/3] bg-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl border-4 border-white transition-all duration-500 cursor-pointer">
-                            {/* @next/next/no-img-element is acceptable here since R2 image domain might not be statically known */}
+                            {/* @next/next/no-img-element is acceptable here since Supabase Storage image domain might not be statically known */}
                             <img
                                 src={img.image_url}
                                 alt={`${img.category} Result`}

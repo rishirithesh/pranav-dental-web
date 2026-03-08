@@ -63,3 +63,7 @@ CREATE POLICY "Allow admin full appointments" ON public.appointments FOR ALL USI
 CREATE POLICY "Allow admin full reviews" ON public.reviews FOR ALL USING (auth.role() = 'authenticated');
 CREATE POLICY "Allow admin full gallery" ON public.gallery FOR ALL USING (auth.role() = 'authenticated');
 CREATE POLICY "Allow admin full services" ON public.services FOR ALL USING (auth.role() = 'authenticated');
+
+-- Storage Setup
+-- Note: You will need to create a public storage bucket named 'gallery' in your Supabase dashboard.
+-- Ensure you add policies for this bucket to allow public reads and authenticated uploads.
