@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                     <div className="space-y-4">
                         <div>
-                            <h2 className="font-bold text-2xl tracking-tight text-gray-900 leading-none">Pranav's</h2>
+                            <h2 className="font-bold text-2xl tracking-tight text-gray-900 leading-none">Pranav&apos;s</h2>
                             <p className="text-sm text-primary font-medium tracking-wider uppercase mt-1">Dental Care</p>
                         </div>
                         <p className="text-gray-600 text-sm leading-relaxed mt-4">
@@ -71,7 +71,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 font-medium">
-                    <p>© {new Date().getFullYear()} Pranav's Dental Care. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Pranav&apos;s Dental Care. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>

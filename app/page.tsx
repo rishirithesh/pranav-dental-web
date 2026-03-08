@@ -47,7 +47,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1 space-y-6">
-              <p className="text-primary font-bold tracking-wide uppercase text-sm">Welcome to Pranav's Dental Care</p>
+              <p className="text-primary font-bold tracking-wide uppercase text-sm">Welcome to Pranav&apos;s Dental Care</p>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">Your Smile is Our Greatest Priority.</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Led by <strong>Dr. Sudhakar Venkatachalapathy (Orthodontist)</strong>, our clinic in Velachery is dedicated to providing comprehensive, personalized dental care.
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-6">
             <div className="max-w-2xl space-y-4">
               <p className="text-primary font-bold tracking-wide uppercase text-sm">Patient Testimonials</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Don't Just Take Our Word For It</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Don&apos;t Just Take Our Word For It</h2>
             </div>
             <div className="flex items-center gap-4 bg-gray-50 border px-6 py-4 rounded-full shadow-sm">
               <div className="flex -space-x-2">
@@ -141,7 +141,7 @@ export default function Home() {
                   <div className="flex text-amber-400 gap-1">
                     {Array(5).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                   </div>
-                  <p className="text-gray-700 italic">"{review.review}"</p>
+                  <p className="text-gray-700 italic">&quot;{review.review}&quot;</p>
                   <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">
                       {review.name.charAt(0)}

@@ -20,7 +20,7 @@ export default async function ReviewsPage() {
             <div className="bg-primary/5 py-16 mb-16 border-b border-primary/10">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Patient Reviews</h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">Read what our patients have to say about their real experiences at Pranav's Dental Care.</p>
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">Read what our patients have to say about their real experiences at Pranav&apos;s Dental Care.</p>
                 </div>
             </div>
 
@@ -70,7 +70,7 @@ export default async function ReviewsPage() {
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                    {reviews?.map((review, i) => (
+                    {reviews?.map((review) => (
                         <div key={review.id} className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-300 flex flex-col justify-between group">
                             <div>
                                 <div className="flex items-center justify-between mb-6">
@@ -89,7 +89,7 @@ export default async function ReviewsPage() {
                                     </div>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute -top-3 -left-2 text-5xl text-gray-100 font-serif leading-none select-none pointer-events-none">"</span>
+                                    <span className="absolute -top-3 -left-2 text-5xl text-gray-100 font-serif leading-none select-none pointer-events-none">&quot;</span>
                                     <p className="text-gray-700 leading-relaxed font-medium relative z-10">{review.review_text}</p>
                                 </div>
                             </div>

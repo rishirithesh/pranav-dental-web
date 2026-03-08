@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import Image from 'next/image';
 
 export const revalidate = 60; // Revalidate every 60s
 
@@ -49,8 +50,8 @@ export default async function GalleryPage({ searchParams }: { searchParams: { ca
                         <div className="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6 border border-gray-100 shadow-inner">
                             <svg className="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                         </div>
-                        <p className="text-gray-900 font-bold text-2xl mb-2">No images found for "{category}".</p>
-                        <p className="text-gray-500 font-medium mb-6">We'll be adding more transformation photos here soon.</p>
+                        <p className="text-gray-900 font-bold text-2xl mb-2">No images found for &quot;{category}&quot;.</p>
+                        <p className="text-gray-500 font-medium mb-6">We&apos;ll be adding more transformation photos here soon.</p>
                         {category !== 'All' && <a href="/gallery" className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold rounded-xl transition-colors">View all images instead</a>}
                     </div>
                 )}
@@ -58,11 +59,13 @@ export default async function GalleryPage({ searchParams }: { searchParams: { ca
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {images?.map((img) => (
                         <div key={img.id} className="group relative aspect-[4/3] bg-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl border-4 border-white transition-all duration-500 cursor-pointer">
-                            {/* @next/next/no-img-element is acceptable here since Supabase Storage image domain might not be statically known */}
-                            <img
+                            {/* next/image optimization configured safely */}
+                            <Image
                                 src={img.image_url}
                                 alt={`${img.category} Result`}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                                 <div className="p-6 text-white w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

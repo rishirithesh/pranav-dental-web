@@ -8,8 +8,27 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, LogOut, LayoutDashboard, Calendar, Image as ImageIcon, Star, Settings } from 'lucide-react';
 
+interface AppointmentType {
+    id: string;
+    name: string;
+    phone: string;
+    email: string;
+    treatment_type: string;
+    preferred_date: string;
+    preferred_time: string;
+    status: string;
+}
+
+interface ReviewType {
+    id: string;
+    patient_name: string;
+    date: string;
+    review_text: string;
+    rating: number;
+}
+
 export default function AdminPage() {
-    const [session, setSession] = useState<any>(null);
+    const [session, setSession] = useState<unknown>(null);
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,8 +36,8 @@ export default function AdminPage() {
     const [activeTab, setActiveTab] = useState('appointments');
 
     // Dashboard Data State
-    const [appointments, setAppointments] = useState<any[]>([]);
-    const [reviews, setReviews] = useState<any[]>([]);
+    const [appointments, setAppointments] = useState<AppointmentType[]>([]);
+    const [reviews, setReviews] = useState<ReviewType[]>([]);
     const [uploadingImage, setUploadingImage] = useState(false);
     const [uploadCategory, setUploadCategory] = useState('Braces');
 
@@ -110,7 +129,7 @@ export default function AdminPage() {
             <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md">
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Admin Portal</h2>
-                    <p className="mt-2 text-center text-sm text-gray-600">Sign in to manage Pranav's Dental Care</p>
+                    <p className="mt-2 text-center text-sm text-gray-600">Sign in to manage Pranav&apos;s Dental Care</p>
                 </div>
 
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -292,7 +311,7 @@ export default function AdminPage() {
                                                             <p className="text-gray-500 text-xs mt-1">{new Date(rev.date).toLocaleDateString()}</p>
                                                         </td>
                                                         <td className="px-6 py-4">
-                                                            <p className="text-gray-600 text-sm line-clamp-2">"{rev.review_text}"</p>
+                                                            <p className="text-gray-600 text-sm line-clamp-2">&quot;{rev.review_text}&quot;</p>
                                                         </td>
                                                         <td className="px-6 py-4 text-center font-bold text-amber-500">
                                                             {rev.rating}/5

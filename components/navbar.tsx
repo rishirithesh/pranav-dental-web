@@ -34,7 +34,7 @@ export default function Navbar() {
                         <Smile className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl tracking-tight text-gray-900 leading-none">Pranav's</h1>
+                        <h1 className="font-bold text-xl tracking-tight text-gray-900 leading-none">Pranav&apos;s</h1>
                         <p className="text-xs text-primary font-medium tracking-wider uppercase mt-0.5">Dental Care</p>
                     </div>
                 </Link>

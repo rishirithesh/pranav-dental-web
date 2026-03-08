@@ -12,7 +12,7 @@ export default function AppointmentPage() {
                             <p className="text-primary font-bold tracking-widest uppercase text-sm mb-3 flex items-center gap-2">
                                 <span className="w-8 h-1 bg-primary rounded-full"></span> Book Your Visit
                             </p>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight mb-6">Let's Give You a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Reason to Smile.</span></h1>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight mb-6">Let&apos;s Give You a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Reason to Smile.</span></h1>
                             <p className="text-lg text-gray-600 leading-relaxed font-medium">Fill out the form to request an appointment. Our team will get back to you promptly to confirm your exact date and time slot.</p>
                         </div>
 

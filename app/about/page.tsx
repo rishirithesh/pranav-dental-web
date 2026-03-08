@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -6,7 +5,7 @@ export default function AboutPage() {
         <div className="pt-20 pb-24">
             <div className="bg-primary/5 py-16 mb-16 border-b border-primary/10">
                 <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">About Pranav's Dental Care</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">About Pranav&apos;s Dental Care</h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">Committed to excellence in dentistry with specialized focus on orthodontics and comprehensive care in Velachery.</p>
                 </div>
             </div>
@@ -19,7 +18,7 @@ export default function AboutPage() {
                             Dr. Sudhakar Venkatachalapathy is a highly skilled and experienced Orthodontist dedicated to providing exceptional dental care in Chennai. With over a decade of clinical experience, he specializes in treating complex orthodontic cases, utilizing state-of-the-art methodology to ensure perfect smiles.
                         </p>
                         <p>
-                            His approach to dentistry combines a deep understanding of facial aesthetics with a commitment to patient comfort. At Pranav's Dental Care, the focus is not just treating teeth, but on enhancing overall oral health and patient confidence.
+                            His approach to dentistry combines a deep understanding of facial aesthetics with a commitment to patient comfort. At Pranav&apos;s Dental Care, the focus is not just treating teeth, but on enhancing overall oral health and patient confidence.
                         </p>
                         <div className="pt-6">
                             <h3 className="font-bold text-xl text-gray-900 mb-4">Our Clinic Philosophy</h3>
@@ -44,7 +43,7 @@ export default function AboutPage() {
                             {/* Doctor Image Placeholder */}
                             <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-50 flex items-center justify-center text-center p-8 group-hover:scale-105 transition-transform duration-700">
                                 <div className="text-primary/40 font-bold text-2xl">
-                                    [ Dr. Sudhakar's Portrait ]
+                                    [ Dr. Sudhakar&apos;s Portrait ]
                                 </div>
                             </div>
                         </div>

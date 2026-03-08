@@ -44,7 +44,7 @@ export default function AppointmentForm() {
 
             setSuccess(true);
             reset();
-        } catch (err: any) {
+        } catch (err: unknown) {
             console.error('Error booking appointment:', err);
             setError('Failed to book appointment. Please make sure the database setup matches the real Supabase schema context or try again later.');
         } finally {
@@ -61,7 +61,7 @@ export default function AppointmentForm() {
                     </div>
                 </div>
                 <h3 className="text-3xl font-extrabold tracking-tight">Appointment Requested!</h3>
-                <p className="text-green-700 text-lg max-w-sm mx-auto">Thank you for choosing Pranav's Dental Care. Our team will contact you shortly to confirm your exact time slot.</p>
+                <p className="text-green-700 text-lg max-w-sm mx-auto">Thank you for choosing Pranav&apos;s Dental Care. Our team will contact you shortly to confirm your exact time slot.</p>
                 <div className="pt-6">
                     <Button onClick={() => setSuccess(false)} variant="outline" className="border-green-300 text-green-700 hover:bg-green-100 rounded-xl h-12 px-8">
                         Book Another Appointment
